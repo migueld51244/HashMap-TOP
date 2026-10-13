@@ -134,6 +134,27 @@ class HashMap {
     }
     return entries;
   }
+
+  resize() {
+    // Collect every entry
+    const entries = this.entries();
+
+    // Resize buckets and update capacity
+    this.capacity = this.capacity * 2;
+    this.buckets = new Array(this.capacity);
+
+    // Re-hash every entry
+    entries.forEach((entry) => {
+      const index = this.hash(entry[0]);
+      let bucket = this.buckets[index];
+
+      if (bucket === undefined) {
+        this.buckets[index] = [[entry[0], entry[1]]];
+      } else {
+        bucket.push([entry[0], entry[1]]);
+      }
+    });
+  }
 }
 
 const a = new HashMap();
