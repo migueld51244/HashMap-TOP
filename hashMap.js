@@ -31,6 +31,9 @@ class HashMap {
       }
       bucket.push([key, value]);
     }
+    if (this.length() / this.capacity > this.loadFactor) {
+      this.resize();
+    }
   }
 
   get(key) {
@@ -156,12 +159,3 @@ class HashMap {
     });
   }
 }
-
-const a = new HashMap();
-
-a.set("banana", "joe");
-a.set("banana", "me");
-a.set("Banana", "me");
-a.set("carl", "cj");
-a.set("random", "value");
-console.log(a.entries());
