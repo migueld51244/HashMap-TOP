@@ -159,3 +159,5 @@ class HashMap {
     });
   }
 }
+
+export { HashMap };
