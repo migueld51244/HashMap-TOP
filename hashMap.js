@@ -31,6 +31,22 @@ class HashMap {
       this.buckets[index].push([key, value]);
     }
   }
+
+  get(key) {
+    const index = this.hash(key);
+    const bucket = this.buckets[index];
+
+    if (bucket === undefined) {
+      return undefined;
+    } else if (bucket.length >= 1) {
+      for (const pair of this.buckets[index]) {
+        if (pair[0] === key) {
+          return pair[1];
+        }
+      }
+    }
+    return undefined;
+  }
 }
 
 const a = new HashMap();
@@ -39,4 +55,6 @@ a.set("banana", "joe");
 a.set("banana", "me");
 a.set("Banana", "me");
 a.set("carl", "cj");
-console.log(a.buckets);
+console.log(a.get("banana"))
+console.log(a.get("what"));
+//console.log(a.buckets);
