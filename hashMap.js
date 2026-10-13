@@ -22,7 +22,7 @@ class HashMap {
     if (bucket === undefined) {
       this.buckets[index] = [[key, value]];
       // Handle existing key
-    } else if (bucket.length >= 1) {
+    } else {
       for (const pair of bucket) {
         if (pair[0] === key) {
           pair[1] = value;
@@ -39,7 +39,7 @@ class HashMap {
 
     if (bucket === undefined) {
       return undefined;
-    } else if (bucket.length >= 1) {
+    } else {
       for (const pair of bucket) {
         if (pair[0] === key) {
           return pair[1];
@@ -55,7 +55,7 @@ class HashMap {
 
     if (bucket === undefined) {
       return false;
-    } else if (bucket.length >= 1) {
+    } else {
       for (const pair of bucket) {
         if (pair[0] === key) {
           return true;
