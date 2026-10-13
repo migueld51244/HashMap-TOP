@@ -82,7 +82,18 @@ class HashMap {
     return false;
   }
 
-  
+  length() {
+    let length = 0;
+
+    for (let i = 0; i < this.buckets.length; i++) {
+      if (!this.buckets[i]) {
+        continue;
+      }
+      const bucketLength = this.buckets[i].length;
+      length += bucketLength;
+    }
+    return length;
+  }
 }
 
 const a = new HashMap();
