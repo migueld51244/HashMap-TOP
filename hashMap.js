@@ -64,6 +64,25 @@ class HashMap {
     }
     return false;
   }
+
+  remove(key) {
+    const index = this.hash(key);
+    const bucket = this.buckets[index];
+
+    if (bucket === undefined) {
+      return false;
+    } else {
+      for (const pair of bucket) {
+        if (pair[0] === key) {
+          bucket.splice(bucket.indexOf(pair), 1);
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  
 }
 
 const a = new HashMap();
@@ -72,6 +91,7 @@ a.set("banana", "joe");
 a.set("banana", "me");
 a.set("Banana", "me");
 a.set("carl", "cj");
+a.set("random", "value");
 console.log(a.has("carl"));
 console.log(a.has("what"));
-//console.log(a.buckets);
+a.remove("banana");
