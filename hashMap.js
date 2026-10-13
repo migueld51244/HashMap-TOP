@@ -122,6 +122,18 @@ class HashMap {
     }
     return values;
   }
+
+  entries() {
+    let entries = [];
+
+    for (let i = 0; i < this.buckets.length; i++) {
+      if (!this.buckets[i]) {
+        continue;
+      }
+      this.buckets[i].forEach((entry) => entries.push(entry));
+    }
+    return entries;
+  }
 }
 
 const a = new HashMap();
@@ -131,4 +143,4 @@ a.set("banana", "me");
 a.set("Banana", "me");
 a.set("carl", "cj");
 a.set("random", "value");
-console.log(a.values());
+console.log(a.entries());
