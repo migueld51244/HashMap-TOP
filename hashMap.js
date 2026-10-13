@@ -94,6 +94,10 @@ class HashMap {
     }
     return length;
   }
+
+  clear() {
+    this.buckets = new Array(this.capacity);
+  }
 }
 
 const a = new HashMap();
@@ -106,3 +110,5 @@ a.set("random", "value");
 console.log(a.has("carl"));
 console.log(a.has("what"));
 a.remove("banana");
+a.clear();
+console.log(a)
