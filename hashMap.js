@@ -178,4 +178,8 @@ class hashSet {
   delete(value) {
     return this.map.remove(value);
   }
+
+  clear() {
+    this.map.clear()
+  }
 }
