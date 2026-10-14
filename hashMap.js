@@ -161,3 +161,13 @@ class HashMap {
 }
 
 export { HashMap };
+
+class hashSet {
+  constructor() {
+    this.map = new HashMap();
+  }
+
+  add(value) {
+    this.map.set(value, value);
+  }
+}
