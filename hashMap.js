@@ -180,6 +180,10 @@ class hashSet {
   }
 
   clear() {
-    this.map.clear()
+    this.map.clear();
+  }
+
+  length() {
+    return this.map.length();
   }
 }
