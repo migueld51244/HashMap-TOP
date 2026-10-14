@@ -170,4 +170,8 @@ class hashSet {
   add(value) {
     this.map.set(value, value);
   }
+
+  has(value) {
+    return this.map.has(value);
+  }
 }
