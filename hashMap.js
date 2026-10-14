@@ -186,4 +186,8 @@ class hashSet {
   length() {
     return this.map.length();
   }
+
+  values() {
+    return this.map.keys();
+  }
 }
