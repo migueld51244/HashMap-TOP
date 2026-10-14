@@ -174,4 +174,8 @@ class hashSet {
   has(value) {
     return this.map.has(value);
   }
+
+  delete(value) {
+    return this.map.remove(value);
+  }
 }
